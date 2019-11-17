@@ -1,3 +1,8 @@
+<!-- 
+    https://www.youtube.com/watch?v=VB6WuCPDwz0&list=PLqq-6Pq4lTTb7JGBTogaJ8bm7f8VCvFkj&index=25 
+    // run project in production mode 
+-->
+
 <p>bindings works!</p>
 <div>
     <p>
@@ -11,7 +16,9 @@
     </p>
 </div>
 
-<div>
+<button (click)='showUser()' >Show User</button>
+
+<div *ngIf='showUserValue' >
     <p>
         {{userObject.name}}
     </p>
@@ -20,5 +27,29 @@
     </p>
     <p>
         {{userObject.phone}}
+    </p>
+    
+    <div>
+        <input type="text" [(ngModel)]="twoWayBinding">
+        <p>{{twoWayBinding}}</p>
+    </div>
+
+</div>
+
+<input type="text" [(ngModel)]="searchName">
+<button (click)= "getData()" >Submit</button>
+
+<div *ngIf="response">
+    <p>
+        {{response.login}}   
+    </p>
+    <p>  
+        {{response.type}}   
+    </p>
+    <p>    
+        {{response.followers}}
+    </p>
+    <p>    
+        {{response.company}}
     </p>
 </div>

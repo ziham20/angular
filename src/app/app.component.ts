@@ -11,6 +11,11 @@ export class AppComponent {
 
    user : User
 
+  routes = [
+    {linkName: 'Home', url:'home'},
+    {linkName: 'contact', url:'contact'}
+  ]
+
   constructor()
   {
     this.user =  new User();

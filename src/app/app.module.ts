@@ -11,12 +11,31 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { DataTableComponent } from './data-table/data-table.component';
 import { BindingsComponent } from './bindings/bindings.component';
+import { FormsModule } from '@angular/forms';
+import { ViewModule } from './view/view.module';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProfileComponent } from './profile/profile.component';
+import { CompanyDetailsComponent } from './company-details/company-details.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
+import { BlogPostComponent } from './blog-post/blog-post.component';
+import { PaginatorComponent } from './paginator/paginator.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     DataTableComponent,
-    BindingsComponent
+    BindingsComponent,
+    HomeComponent,
+    ContactComponent,
+    PageNotFoundComponent,
+    ProfileComponent,
+    CompanyDetailsComponent,
+    BlogListComponent,
+    BlogPostComponent,
+    PaginatorComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +43,10 @@ import { BindingsComponent } from './bindings/bindings.component';
     BrowserAnimationsModule,
     MatTableModule,
     MatPaginatorModule, // hold paginating logic
-    MatSortModule //hold sorting logic
+    MatSortModule, //hold sorting logic
+    FormsModule,
+    ViewModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

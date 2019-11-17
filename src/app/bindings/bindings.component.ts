@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { User } from './user.model'
+import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-bindings',
@@ -18,12 +19,36 @@ export class BindingsComponent implements OnInit {
 
   @Input('user')  userObject: User
 
-  constructor()
+  showUserValue: boolean = false;
+
+  twoWayBinding: string = "Default Value"
+
+  searchName : string;
+  response : any;
+
+  constructor(private http: HttpClient)
    {
 
     }
 
   ngOnInit() {
+  }
+
+  showUser()
+  {     
+    this.showUserValue = !this.showUserValue
+
+  }
+
+  getData(){
+
+    this.http.get('https://api.github.com/users/'+ this.searchName).subscribe(
+      (response)=>{
+        this.response = response
+        console.log(this.response)
+      }
+    )
+
   }
 
 }

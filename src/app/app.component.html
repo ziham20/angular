@@ -1,9 +1,20 @@
-<div>
-
-  <!-- <app-data-table>
-    
-  </app-data-table> -->
-<app-bindings name='Zuhair' test='test, replaced' [user]='user'></app-bindings>
-
+<div *ngIf=false>
+  <div>
+    <!-- from view module -->
+  </div>
+  <div>
+    <!-- <app-data-table>
+    </app-data-table> -->
+  <app-bindings name='Zuhair' test='test, replaced' [user]='user'></app-bindings>
+  
+  </div>
+  <!-- <a routerLink='home'>Home</a>
+  <a routerLink='contact'>Contact</a> -->
+  <a *ngFor="let route of routes" [routerLink]='route.url'>{{route.linkName}}</a>
+  <router-outlet></router-outlet>
+  <!--  <app-view></app-view>  //component from a different module -->
 </div>
-<router-outlet></router-outlet>
+
+<app-blog-list></app-blog-list>
+
+
